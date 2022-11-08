@@ -9,7 +9,7 @@ packages = [{include = "pdf_browser"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 pymupdf = "^1.20.2"
-wxpython = "^4.2.0"
+pyqt6 = "^6.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
