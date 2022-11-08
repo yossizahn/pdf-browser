@@ -319,6 +319,21 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "PyQt6-stubs"
+version = "6.2.3.1"
+description = "PEP561 stub files for the PyQt6 framework"
+category = "main"
+optional = false
+python-versions = ">= 3.6"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/python-qt-tools/PyQt6-stubs"
+reference = "HEAD"
+resolved_reference = "f623a641cd5cdff53342177e4fbbf9cae8172336"
+
+[[package]]
 name = "pytest"
 version = "7.2.0"
 description = "pytest: simple powerful testing with Python"
@@ -418,7 +433,7 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "ad902b9205a5f731de35434a10c7cae923c0b75ffc77514a37032de5b53e9a0d"
+content-hash = "28b04a07ade44b0f20c3f16cef2b1be3606d23ef632cbbe859d15275a5a5378f"
 
 [metadata.files]
 attrs = [
@@ -663,6 +678,7 @@ pyqt6-sip = [
     {file = "PyQt6_sip-13.4.0-cp39-cp39-win_amd64.whl", hash = "sha256:3486914137f5336cff6e10a5e9d52c1e60ff883473938b45f267f794daeacb2f"},
     {file = "PyQt6_sip-13.4.0.tar.gz", hash = "sha256:6d87a3ee5872d7511b76957d68a32109352caf3b7a42a01d9ee20032b350d979"},
 ]
+PyQt6-stubs = []
 pytest = [
     {file = "pytest-7.2.0-py3-none-any.whl", hash = "sha256:892f933d339f068883b6fd5a459f03d85bfcb355e4981e146d2c7616c21fef71"},
     {file = "pytest-7.2.0.tar.gz", hash = "sha256:c4014eb40e10f11f355ad4e3c2fb2c6c6d1919c73f3b5a433de4708202cade59"},
