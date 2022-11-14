@@ -50,6 +50,7 @@ class PBMainWindow(QMainWindow):
             self,
             "Select file to open...",
             filter="PDF Files (*.pdf)",
+            directory=f"{Path.home()}",
         )
         if filename == "":
             return
