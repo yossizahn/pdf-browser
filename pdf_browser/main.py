@@ -80,14 +80,18 @@ class PBMainWindow(QMainWindow):
         )
         page: fitz.Page = self.pdf.load_page(pageNumber)
         dl: fitz.DisplayList = page.get_displaylist()
-        pix: fitz.Pixmap = dl.get_pixmap()
+        ratio = self.devicePixelRatio()
+        pix: fitz.Pixmap = dl.get_pixmap(matrix=fitz.Matrix(ratio, ratio))
         fmt = (
             QImage.Format.Format_RGBA8888
             if pix.alpha
             else QImage.Format.Format_RGB888
         )
-        qtimg = QImage(pix.samples_ptr, pix.width, pix.height, pix.stride, fmt)
-        self.imageLabel.setPixmap(QPixmap.fromImage(qtimg))
+        qt_img = QImage(
+            pix.samples_ptr, pix.width, pix.height, pix.stride, fmt
+        )
+        qt_img.setDevicePixelRatio(ratio)
+        self.imageLabel.setPixmap(QPixmap.fromImage(qt_img))
 
 
 if __name__ == "__main__":
