@@ -83,13 +83,9 @@ class PBMainWindow(QMainWindow):
         ratio = self.devicePixelRatio()
         pix: fitz.Pixmap = dl.get_pixmap(matrix=fitz.Matrix(ratio, ratio))
         fmt = (
-            QImage.Format.Format_RGBA8888
-            if pix.alpha
-            else QImage.Format.Format_RGB888
+            QImage.Format.Format_RGBA8888 if pix.alpha else QImage.Format.Format_RGB888
         )
-        qt_img = QImage(
-            pix.samples_ptr, pix.width, pix.height, pix.stride, fmt
-        )
+        qt_img = QImage(pix.samples_ptr, pix.width, pix.height, pix.stride, fmt)
         qt_img.setDevicePixelRatio(ratio)
         self.imageLabel.setPixmap(QPixmap.fromImage(qt_img))
 
